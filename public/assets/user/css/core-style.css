@@ -530,10 +530,14 @@ img {
 
 .header-social-area a {
     display: inline-block;
-    padding: 0 20px;
-    font-size: 34px;
+    padding: 0 15px;
+    font-size: 30px;
     position: relative;
     z-index: 1;
+}
+
+.header-social-area a:hover {
+    color: darkorange;
 }
 
 .help-line a {
@@ -2056,7 +2060,7 @@ img {
 .order-details-confirmation {
     width: 100%;
     border: 2px solid #ebebeb;
-    padding: 40px;
+    padding: 20px;
 }
 
 .order-details-confirmation .order-details-form li {
@@ -2078,7 +2082,7 @@ img {
 
 .order-details-confirmation .card-header h6 a {
     display: block;
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
@@ -2096,7 +2100,7 @@ img {
 }
 
 .order-details-confirmation .card-body p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 2;
     color: #9f9f9f;
 }

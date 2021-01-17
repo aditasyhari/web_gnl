@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
-});
 
+Route::get('/', 'user\UserController@index');
+Route::get('product', 'user\UserController@product');
+Route::get('faq', 'user\UserController@faq');
+Route::get('about', 'user\UserController@about');
 
 Route::get('login', 'AuthController@showFormLogin')->name('login');
 Route::post('login', 'AuthController@login')->name('login');
