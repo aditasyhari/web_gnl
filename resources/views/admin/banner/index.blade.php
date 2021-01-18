@@ -36,12 +36,23 @@
                 </td>
                 <td>{{$banner->headline}}</td>
                 <td>
-                    <form action="{{url('admin/banner/'.$banner->id)}}" method="post" class="tm-product-delete-link">
+                    <form action="{{url('admin/settings/banner/'.$banner->id)}}" method="post" class="tm-product-delete-link">
                     @method('delete')
                     @csrf
-                        <button type="submit" style="background:none; border:none;">
-                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
-                        </button>
+                            <a href="#" title="Delete" onclick="clicked()">
+                                <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                            </a>
+
+                            <script type="text/javascript">
+                                var form = document.querySelector('form');
+                                function clicked() {
+                                    if (confirm('Do you want to delete ?')) {
+                                        form.submit();
+                                    } else {
+                                        return false;
+                                    }
+                                }
+                            </script>
                     </form>
 
                     </a>

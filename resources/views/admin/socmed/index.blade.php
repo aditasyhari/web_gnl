@@ -26,7 +26,7 @@
                         name="wa"
                         type="text"
                         class="form-control validate"
-                        placeholder="contoh: 087869567xxx"
+                        placeholder="contoh: +6287869567xxx"
                         required
                         value="{{ $socmed[0]->name }}"
                     />
