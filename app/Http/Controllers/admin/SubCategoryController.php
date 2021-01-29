@@ -95,4 +95,10 @@ class SubCategoryController extends Controller
         SubCategory::destroy($subcategory->id);
         return redirect('/admin/product')->with('status', 'Data berhasil dihapus');
     }
+
+    public function getSubCategory(Request $request)
+    {
+        $data = SubCategory::where('category_id', '=', $request->category_id)->get();
+        return response()->json($data);
+    }
 }

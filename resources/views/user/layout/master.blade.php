@@ -61,15 +61,9 @@
                         <div class="col-12 d-md-flex justify-content-between">
                             <!-- Header Social Area -->
                             <div class="header-social-area">
-                                @foreach($fb as $FB)
-                                <a href="{{ $FB->name }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                @endforeach
-                                @foreach($ig as $IG)
-                                <a href="https://www.instagram.com/{{ $IG->name }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                @endforeach
-                                @foreach($wa as $WA)
-                                <a href="https://api.whatsapp.com/send?phone={{ substr($WA->name, 1) }}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                                @endforeach
+                                <a href="{{ $fb->name }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/{{ $ig->name }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone={{ substr($wa->name, 1) }}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                             </div>
                             <!-- Menu Area -->
                             <div class="main-menu-area">
@@ -89,9 +83,7 @@
                             </div>
                             <!-- Help Line -->
                             <div class="help-line">
-                                @foreach($wa as $WA)
-                                <a href="tel:{{ $WA->name }}"><i class="ti-headphone-alt"></i> Phone</a>
-                                @endforeach
+                                <a href="tel:{{ $wa->name }}"><i class="ti-headphone-alt"></i> Phone</a>
                             </div>
                         </div>
                     </div>
@@ -119,9 +111,9 @@
                     <div class="col-12 col-sm-6 col-md-3 col-lg-9">
                         <div class="single_footer_area">
                             <div class="footer_social_area text-center">
-                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                                <a href="{{ $fb->name }}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/{{ $ig->name }}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <a href="https://api.whatsapp.com/send?phone={{ substr($wa->name, 1) }}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>

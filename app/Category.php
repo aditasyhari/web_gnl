@@ -8,4 +8,13 @@ class Category extends Model
 {
     //
     protected $fillable = ['name'];
+
+    public function subcategory(){ 
+        return $this->hasMany(SubCategory::class); 
+    }
+
+    public function subcategories(){ 
+        return $this->hasMany(SubCategory::class)->withCount('product'); 
+    }
+
 }

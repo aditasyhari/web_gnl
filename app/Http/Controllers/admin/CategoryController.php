@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Category;
 use App\SingleCategory;
+use App\SubCategory;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -40,6 +41,14 @@ class CategoryController extends Controller
         $this->validate($request, [
 			'name' => 'required',
         ]);
+
+        $category = Category::where('name', $request->name)->count();
+        $subcategory = SubCategory::where('name', $request->name)->count();
+        $singlecategory = SingleCategory::where('name', $request->name)->count();
+
+        if($category > 0 || $subcategory > 0 || $singlecategory > 0 ) {
+            return redirect('admin/product')->with('gagal', 'Nama sudah ada, coba cari nama yang lain !');
+        }
         
         $jenisKategori = $request->jenis_kategori;
         $namaKategori = $request->name;
@@ -101,7 +110,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        Category::destroy($category->id);
+        Category::find($category->id)->delete();
         return redirect('/admin/product')->with('status', 'Data berhasil dihapus !');
     }
 
